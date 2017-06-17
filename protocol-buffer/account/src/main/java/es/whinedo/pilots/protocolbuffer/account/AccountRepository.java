@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import es.whinedo.pilots.protocolbuffer.account.model.AccountProto.Account;
 
-@Repository
+
 public class AccountRepository {
 
-	List<Account> accounts;
+	private List<Account> accounts;
 
 	public AccountRepository(List<Account> accounts) {
 		this.accounts = accounts;

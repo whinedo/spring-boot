@@ -2,11 +2,9 @@ package es.whinedo.pilots.protocolbuffer.customer;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
 
 import es.whinedo.pilots.protocolbuffer.customer.model.CustomerProto.Customer;
 
-@Repository
 public class CustomerRepository {
 
 	private List<Customer> customers;

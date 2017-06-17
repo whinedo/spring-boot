@@ -22,17 +22,17 @@ public class AccountApplication {
 	
 	@Bean
     @Primary
-    ProtobufHttpMessageConverter protobufHttpMessageConverter() {
+    public ProtobufHttpMessageConverter protobufHttpMessageConverter() {
         return new ProtobufHttpMessageConverter();
     }
     
     @Bean
-    RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
+    public RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
         return new RestTemplate(Arrays.asList(hmc));
     }
     
     @Bean
-    AccountRepository repository() {
+    public AccountRepository repository() {
 		List<Account> accounts = new ArrayList<>();
 		accounts.add(Account.newBuilder().setId(1).setCustomerId(1).setNumber("111111").build());
 		accounts.add(Account.newBuilder().setId(2).setCustomerId(2).setNumber("222222").build());

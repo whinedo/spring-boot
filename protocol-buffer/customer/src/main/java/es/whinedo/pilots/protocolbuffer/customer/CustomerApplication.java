@@ -23,17 +23,17 @@ public class CustomerApplication {
 	}
 
 	@Bean
-	ProtobufHttpMessageConverter protobufHttpMessageConverter() {
+	public ProtobufHttpMessageConverter protobufHttpMessageConverter() {
 		return new ProtobufHttpMessageConverter();
 	}
 
 	@Bean
-	RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
+	public RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
 		return new RestTemplate(Arrays.asList(hmc));
 	}
 
 	@Bean
-	CustomerRepository repository() {
+	public CustomerRepository repository() {
 		List<Customer> customers = new ArrayList<>();
 		customers.add(Customer.newBuilder().setId(1).setPesel("12345").setName("Adam Kowalski")
 				.setType(CustomerType.INDIVIDUAL).build());
